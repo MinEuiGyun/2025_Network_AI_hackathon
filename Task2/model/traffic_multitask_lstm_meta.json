@@ -1,0 +1,27 @@
+{
+    "input_size": 19,
+    "hidden_size": 64,
+    "num_classes": 4,
+    "seq_len": 3,
+    "packet_features": [
+        "protocol",
+        "ip_len",
+        "ip_hdr_len",
+        "ip_tos",
+        "ip_ttl",
+        "tcp_len",
+        "tcp_hdr_len",
+        "tcp_seq",
+        "tcp_ack",
+        "tcp_window_size",
+        "tcp_flags_ns",
+        "tcp_flags_cwr",
+        "tcp_flags_ecn",
+        "tcp_flags_urg",
+        "tcp_flags_ack",
+        "tcp_flags_push",
+        "tcp_flags_reset",
+        "tcp_flags_syn",
+        "tcp_flags_fin"
+    ]
+}

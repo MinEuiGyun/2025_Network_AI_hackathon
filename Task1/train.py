@@ -69,8 +69,8 @@ class LSTMModel(pl.LightningModule):
     def configure_optimizers(self):
         return torch.optim.Adam(self.parameters(), lr=0.001)
 
-def train_model(model_name="traffic_lstm_model", 
-                csv_path="train_data.csv ",
+def train_model(model_name="traffic_lstm_model",
+                csv_path=os.path.join(os.path.dirname(__file__), "train_data.csv"),
                 save_path="./model"):
     os.makedirs(save_path, exist_ok=True)
     

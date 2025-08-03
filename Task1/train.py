@@ -3,8 +3,8 @@ import pandas as pd
 import torch
 import torch.nn as nn
 import pytorch_lightning as pl
-from torch.utils.data import Dataset, DataLoader
 from sklearn.preprocessing import StandardScaler
+from torch.utils.data import Dataset, DataLoader
 import pickle
 import json
 import os
@@ -56,39 +56,44 @@ class LSTMModel(pl.LightningModule):
         x, y = batch
         y_hat = self(x)
         loss = nn.MSELoss()(y_hat, y)
-        self.log('train_loss', loss)
+        self.log('train_loss', loss, prog_bar=True)
         return loss
     
     def validation_step(self, batch, batch_idx):
         x, y = batch
         y_hat = self(x)
         loss = nn.MSELoss()(y_hat, y)
-        self.log('val_loss', loss)
+        self.log('val_loss', loss, prog_bar=True)
         return loss
     
     def configure_optimizers(self):
         return torch.optim.Adam(self.parameters(), lr=0.001)
 
 def train_model(model_name="traffic_lstm_model", 
-                csv_path="train_data.csv ",
+                csv_path="./task1_data/train_data.csv",
                 save_path="./model"):
     os.makedirs(save_path, exist_ok=True)
     
     # 데이터 로드
     df = pd.read_csv(csv_path)
     print(f"데이터 로드 완료: {df.shape}")
-    
+
+
     # 입력 특성 (27개, peak_volume 제외)
-    input_cols = ['fwd_pkt_count', 'bwd_pkt_count', 'fwd_tcp_pkt_count', 'bwd_tcp_pkt_count',
-                  'fwd_udp_pkt_count', 'bwd_udp_pkt_count', 'traffic_volume',
-                  'fwd_tcp_flags_cwr_count', 'bwd_tcp_flags_cwr_count', 'fwd_tcp_flags_ecn_count',
-                  'bwd_tcp_flags_ecn_count', 'fwd_tcp_flags_ack_count', 'bwd_tcp_flags_ack_count',
-                  'fwd_tcp_flags_push_count', 'bwd_tcp_flags_push_count', 'fwd_tcp_flags_reset_count',
-                  'bwd_tcp_flags_reset_count', 'fwd_tcp_flags_syn_count', 'bwd_tcp_flags_syn_count',
-                  'fwd_tcp_flags_fin_count', 'bwd_tcp_flags_fin_count', 'fwd_tcp_window_size_avg',
-                  'bwd_tcp_window_size_avg', 'fwd_tcp_window_size_max', 'bwd_tcp_window_size_max',
-                  'fwd_tcp_window_size_min', 'bwd_tcp_window_size_min']
-    
+    input_cols = [
+        'fwd_pkt_count', 'bwd_pkt_count', 'fwd_tcp_pkt_count',
+        'bwd_tcp_pkt_count', 'fwd_udp_pkt_count', 'bwd_udp_pkt_count',
+        'traffic_volume', 'fwd_tcp_flags_cwr_count', 'bwd_tcp_flags_cwr_count',
+        'fwd_tcp_flags_ecn_count', 'bwd_tcp_flags_ecn_count',
+        'fwd_tcp_flags_ack_count', 'bwd_tcp_flags_ack_count',
+        'fwd_tcp_flags_push_count', 'bwd_tcp_flags_push_count',
+        'fwd_tcp_flags_reset_count', 'bwd_tcp_flags_reset_count',
+        'fwd_tcp_flags_syn_count', 'bwd_tcp_flags_syn_count',
+        'fwd_tcp_flags_fin_count', 'bwd_tcp_flags_fin_count',
+        'fwd_tcp_window_size_avg', 'bwd_tcp_window_size_avg',
+        'fwd_tcp_window_size_max', 'bwd_tcp_window_size_max',
+        'fwd_tcp_window_size_min', 'bwd_tcp_window_size_min'
+    ]
     # 데이터 전처리
     x_scaler = StandardScaler()
     y_scaler = StandardScaler()

@@ -1,0 +1,6 @@
+hidden_channels:
+- 25
+- 25
+- 25
+input_size: 27
+lr: 0.001

@@ -1,29 +1,3 @@
-﻿column_name,description
-fwd_pkt_count,순방향(FWD) 패킷 수
-bwd_pkt_count,역방향(BWD) 패킷 수
-fwd_tcp_pkt_count,순방향 TCP 패킷 수
-bwd_tcp_pkt_count,역방향 TCP 패킷 수
-fwd_udp_pkt_count,순방향 UDP 패킷 수
-bwd_udp_pkt_count,역방향 UDP 패킷 수
-traffic_volume,네트워크 트래픽 용량
-fwd_tcp_flags_cwr_count,순방향 TCP CWR 플래그가 설정된 패킷 수
-bwd_tcp_flags_cwr_count,역방향 TCP CWR 플래그가 설정된 패킷 수
-fwd_tcp_flags_ecn_count,순방향 TCP ECN 플래그가 설정된 패킷 수
-bwd_tcp_flags_ecn_count,역방향 TCP ECN 플래그가 설정된 패킷 수
-fwd_tcp_flags_ack_count,순방향 TCP ACK 플래그가 설정된 패킷 수
-bwd_tcp_flags_ack_count,역방향 TCP ACK 플래그가 설정된 패킷 수
-fwd_tcp_flags_push_count,순방향 TCP PUSH 플래그가 설정된 패킷 수
-bwd_tcp_flags_push_count,역방향 TCP PUSH 플래그가 설정된 패킷 수
-fwd_tcp_flags_reset_count,순방향 TCP RST 플래그가 설정된 패킷 수
-bwd_tcp_flags_reset_count,역방향 TCP RST 플래그가 설정된 패킷 수
-fwd_tcp_flags_syn_count,순방향 TCP SYN 플래그가 설정된 패킷 수
-bwd_tcp_flags_syn_count,역방향 TCP SYN 플래그가 설정된 패킷 수
-fwd_tcp_flags_fin_count,순방향 TCP FIN 플래그가 설정된 패킷 수
-bwd_tcp_flags_fin_count,역방향 TCP FIN 플래그가 설정된 패킷 수
-fwd_tcp_window_size_avg,순방향 TCP 윈도우 크기 평균
-bwd_tcp_window_size_avg,역방향 TCP 윈도우 크기 평균
-fwd_tcp_window_size_max,순방향 TCP 윈도우 크기 최대값
-bwd_tcp_window_size_max,역방향 TCP 윈도우 크기 최대값
-fwd_tcp_window_size_min,순방향 TCP 윈도우 크기 최소값
-bwd_tcp_window_size_min,역방향 TCP 윈도우 크기 최소값
-peak_volume,피크 시점의 최대 트래픽 용량
+version https://git-lfs.github.com/spec/v1
+oid sha256:2bf5598accccf95ac2113476a27c1814fb64460f28c2a4171ca10759dd7a75c1
+size 1833

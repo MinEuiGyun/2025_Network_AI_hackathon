@@ -1,28 +1,3 @@
-index,column
-0,fwd_pkt_count
-1,bwd_pkt_count
-2,fwd_tcp_pkt_count
-3,bwd_tcp_pkt_count
-4,fwd_udp_pkt_count
-5,bwd_udp_pkt_count
-6,traffic_volume
-7,fwd_tcp_flags_cwr_count
-8,bwd_tcp_flags_cwr_count
-9,fwd_tcp_flags_ecn_count
-10,bwd_tcp_flags_ecn_count
-11,fwd_tcp_flags_ack_count
-12,bwd_tcp_flags_ack_count
-13,fwd_tcp_flags_push_count
-14,bwd_tcp_flags_push_count
-15,fwd_tcp_flags_reset_count
-16,bwd_tcp_flags_reset_count
-17,fwd_tcp_flags_syn_count
-18,bwd_tcp_flags_syn_count
-19,fwd_tcp_flags_fin_count
-20,bwd_tcp_flags_fin_count
-21,fwd_tcp_window_size_avg
-22,bwd_tcp_window_size_avg
-23,fwd_tcp_window_size_max
-24,bwd_tcp_window_size_max
-25,fwd_tcp_window_size_min
-26,bwd_tcp_window_size_min
+version https://git-lfs.github.com/spec/v1
+oid sha256:52ae180fabd8774c640ff43bbbfe03148b46893ac487a794ce6e9118384235fb
+size 685
